@@ -1,2 +1,10 @@
 [phases.setup]
 nixPkgs = ["php84", "php84Packages.composer", "nodejs_22"]
+
+[phases.deploy]
+cmds = [
+    "php artisan migrate --force",
+    "php artisan db:seed --class=LapanganSeeder --force",
+    "php artisan db:seed --class=LapanganPhotoSeeder --force",
+    "php artisan storage:link",
+]
