@@ -114,3 +114,7 @@ Route::get('/cek-user', function () {
 
     return User::all();
 });
+
+Route::get('/test', function () {
+    return 'Railway hidup';
+});
