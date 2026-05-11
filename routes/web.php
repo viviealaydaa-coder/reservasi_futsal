@@ -15,7 +15,9 @@ use App\Http\Controllers\Admin\KeuanganController;
 
 // Halaman publik
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/lapangans', [LapanganController::class, 'index'])->name('lapangans.index');
+
 Route::get('/lapangans/{id}', [LapanganController::class, 'show'])->name('lapangans.show');
 
 // Auth routes
@@ -105,4 +107,10 @@ Route::get('/reset-admin', function () {
     }
 
     return 'User tidak ditemukan';
+});
+
+// CEK USER
+Route::get('/cek-user', function () {
+
+    return User::all();
 });
